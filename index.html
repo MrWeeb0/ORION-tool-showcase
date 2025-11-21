@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orion - Advanced Engineering Career Insights Tool. Scrape, analyze, and visualize real-world engineering career discussions.">
+    <meta name="theme-color" content="#D4AF37">
+    <title>Orion - Engineering Career Insights Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Orion</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="https://github.com/MrWeeb0/ORION-Career-Insight-Reddit" target="_blank" rel="noopener noreferrer" class="nav-github">GitHub</a></li>
+                <li><a href="#cta">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Orion</h1>
+                <p class="hero-subtitle">Advanced Engineering Career Insights</p>
+                <p class="hero-description">Scrape, analyze, and visualize real-world engineering career discussions from the world's largest engineering community.</p>
+                <a href="#cta" class="cta-button">Start Now</a>
+            </div>
+            <div class="hero-visual">
+                <div class="orbiting-circle">
+                    <img src="images/orion logo.jpg" alt="orion logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Smart Data Extraction</h3>
+                    <p>Automatically scrape and categorize thousands of engineering career discussions from r/AskEngineers with intelligent filtering.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📑</div>
+                    <h3>Multi-Format Output</h3>
+                    <p>Generate professional PDFs, formatted text documents, and raw JSON data for deeper analysis and insights.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Intelligent Categorization</h3>
+                    <p>Posts automatically organized into 5 thematic chapters covering career transitions, expectations, growth, and workplace dynamics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Community Insights</h3>
+                    <p>Extract and highlight top community comments to surface the most valuable perspectives from experienced engineers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Rate-Limited Scraping</h3>
+                    <p>Respectful API usage with intelligent rate limiting and error handling for reliable, sustainable data collection.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Ethical & Compliant</h3>
+                    <p>Fully compliant with Reddit's Terms of Service and best practices for web scraping and data handling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Connect</h3>
+                    <p class="step-short">Securely connect to Reddit API to access r/AskEngineers data</p>
+                    <div class="step-details">
+                        <p class="step-detail-text">Establishes a secure connection to Reddit's API using proper authentication headers, User-Agent strings, and OAuth tokens. Handles rate limiting gracefully to respect Reddit's infrastructure.</p>
+                        <ul class="step-detail-list">
+                            <li>✓ Secure authentication</li>
+                            <li>✓ API rate limiting</li>
+                            <li>✓ Error handling</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Scrape</h3>
+                    <p class="step-short">Intelligently collect career-related posts with smart filtering</p>
+                    <div class="step-details">
+                        <p class="step-detail-text">Searches r/AskEngineers for posts containing career-related keywords, filters by relevance and engagement, and collects comprehensive metadata including titles, content, scores, and timestamps.</p>
+                        <ul class="step-detail-list">
+                            <li>✓ Smart keyword filtering</li>
+                            <li>✓ Relevance scoring</li>
+                            <li>✓ Metadata collection</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Analyze</h3>
+                    <p class="step-short">Categorize content and extract top community insights</p>
+                    <div class="step-details">
+                        <p class="step-detail-text">Automatically organizes posts into 5 thematic categories, extracts and ranks top comments by engagement, and identifies key insights from community discussions for maximum value.</p>
+                        <ul class="step-detail-list">
+                            <li>✓ 5-chapter categorization</li>
+                            <li>✓ Comment ranking</li>
+                            <li>✓ Insight extraction</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h3>Generate</h3>
+                    <p class="step-short">Create beautiful PDF documents and formatted outputs</p>
+                    <div class="step-details">
+                        <p class="step-detail-text">Generates professional, multi-format output including styled PDFs with covers and formatting, plain text documents for accessibility, and JSON data for programmatic analysis.</p>
+                        <ul class="step-detail-list">
+                            <li>✓ Professional PDFs</li>
+                            <li>✓ Multiple formats</li>
+                            <li>✓ Formatted output</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2>Why Choose Orion</h2>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <h3>✓ Real-World Insights</h3>
+                    <p>Direct access to authentic career experiences from practicing engineers, not curated content.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>✓ Time-Saving</h3>
+                    <p>Automatically aggregates months of discussions into structured, digestible formats.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>✓ Student-Focused</h3>
+                    <p>Specifically designed for engineering students making career decisions.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>✓ Professional Quality</h3>
+                    <p>Industry-standard formatting and presentation in every output.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Source Section -->
+    <section class="open-source">
+        <div class="container">
+            <h2>Open Source & Community Driven</h2>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">Orion is completely open source. Join our community and help shape the future of engineering career insights.</p>
+            
+            <div class="open-source-grid">
+                <!-- GitHub Contribution Card -->
+                <div class="os-card">
+                    <div class="os-card-icon">🔧</div>
+                    <h3>Contribute</h3>
+                    <p>Fork the repository and contribute improvements, bug fixes, or new features to help the community.</p>
+                    <a href="https://github.com/MrWeeb0/ORION-Career-Insight-Reddit" target="_blank" rel="noopener noreferrer" class="os-link">
+                        View Repository
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: inline; margin-left: 4px;">
+                            <polyline points="7 17 17 7"></polyline>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Features Card -->
+                <div class="os-card">
+                    <div class="os-card-icon">✨</div>
+                    <h3>Fully Featured</h3>
+                    <p>Get the complete feature set: PDF generation, JSON export, intelligent categorization, and more.</p>
+                    <ul class="os-features-list">
+                        <li>✓ Multi-format output</li>
+                        <li>✓ Smart categorization</li>
+                        <li>✓ Rate limiting</li>
+                    </ul>
+                </div>
+
+                <!-- Deploy Card -->
+                <div class="os-card">
+                    <div class="os-card-icon">🚀</div>
+                    <h3>Self-Host</h3>
+                    <p>Deploy your own instance anywhere. No restrictions, no dependencies on external services.</p>
+                    <a href="https://github.com/MrWeeb0/ORION-Career-Insight-Reddit" target="_blank" rel="noopener noreferrer" class="os-link">
+                        Get Started
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: inline; margin-left: 4px;">
+                            <polyline points="7 17 17 7"></polyline>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Community Card -->
+                <div class="os-card">
+                    <div class="os-card-icon">👥</div>
+                    <h3>Community</h3>
+                    <p>Join developers and engineers building solutions together. Discuss ideas and share feedback.</p>
+                    <a href="https://github.com/MrWeeb0/ORION-Career-Insight-Reddit" target="_blank" rel="noopener noreferrer" class="os-link">
+                        Join us on GitHub
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: inline; margin-left: 4px;">
+                            <polyline points="7 17 17 7"></polyline>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- License Card -->
+                <div class="os-card">
+                    <div class="os-card-icon">⚖️</div>
+                    <h3>MIT License</h3>
+                    <p>Use Orion freely in commercial and personal projects with minimal restrictions.</p>
+                    <span class="os-badge">Permissive Open Source</span>
+                </div>
+
+                <!-- Support Card -->
+                <div class="os-card">
+                    <div class="os-card-icon">💬</div>
+                    <h3>Documentation</h3>
+                    <p>Comprehensive docs, examples, and guides to get you up and running quickly.</p>
+                    <a href="https://github.com/MrWeeb0/ORION-Career-Insight-Reddit" target="_blank" rel="noopener noreferrer" class="os-link">
+                        Read Docs
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: inline; margin-left: 4px;">
+                            <polyline points="7 17 17 7"></polyline>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Primary CTA Button -->
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="https://github.com/MrWeeb0/ORION-Career-Insight-Reddit" target="_blank" rel="noopener noreferrer" class="github-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: inline; margin-right: 8px; vertical-align: middle;">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    Star us on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Get Orion's Full Output Insights In Your Inbox</h2>
+                <p>Leave your email to get the latest news, updates and output right into your inbox.</p>
+                <form id="leadForm" class="lead-form" method="POST">
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="your.email@example.com" 
+                            required 
+                            autocomplete="email"
+                            aria-label="Email address"
+                        >
+                        <button type="submit" id="submitButton" class="button button-primary">Let's Connect</button>
+                    </div>
+                    <p id="formMessage" class="form-message" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Orion</h4>
+                    <p>Engineering Career Insights Tool</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#cta">Subscribe</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Orion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
