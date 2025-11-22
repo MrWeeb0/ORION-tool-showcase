@@ -20,6 +20,73 @@ const submitButton = document.querySelector(CONFIG.SUBMIT_BUTTON_SELECTOR);
 const messageElement = document.querySelector(CONFIG.MESSAGE_SELECTOR);
 
 /**
+ * Initialize Open Source carousel
+ */
+function initializeOSCarousel() {
+    const titleItems = document.querySelectorAll('.os-title-item');
+    const contentCard = document.querySelector('.os-content-inner');
+    const contentData = document.getElementById('os-content-data');
+    
+    if (!titleItems.length || !contentCard) return;
+    
+    function updateContent(index) {
+        const item = contentData.querySelector(`.os-item[data-index="${index}"]`);
+        if (!item) return;
+        
+        const icon = item.querySelector('.os-item-icon').textContent;
+        const title = item.querySelector('.os-item-title').textContent;
+        const description = item.querySelector('.os-item-description').textContent;
+        const link = item.querySelector('.os-item-link')?.textContent || null;
+        const features = item.querySelector('.os-item-features')?.innerHTML || null;
+        const badge = item.querySelector('.os-item-badge')?.textContent || null;
+        const url = item.querySelector('.os-item-url').textContent;
+        
+        // Update content with fade effect
+        contentCard.style.opacity = '0';
+        
+        setTimeout(() => {
+            let contentHTML = `
+                <div class="os-content-header">
+                    <span class="os-content-icon">${icon}</span>
+                    <h3>${title}</h3>
+                </div>
+                <p class="os-content-description">${description}</p>
+            `;
+            
+            if (features) {
+                contentHTML += `<div class="os-content-features">${features}</div>`;
+            }
+            
+            if (badge) {
+                contentHTML += `<span class="os-content-badge">${badge}</span>`;
+            }
+            
+            if (link) {
+                contentHTML += `<a href="${url}" target="_blank" rel="noopener noreferrer" class="os-content-link">${link}</a>`;
+            }
+            
+            contentHTML += '<div class="os-content-accent"></div>';
+            
+            contentCard.innerHTML = contentHTML;
+            contentCard.style.opacity = '1';
+        }, 200);
+        
+        // Update active state
+        titleItems.forEach((item, idx) => {
+            item.classList.toggle('active', idx === index);
+        });
+    }
+    
+    // Add click listeners
+    titleItems.forEach((item, index) => {
+        item.addEventListener('click', () => updateContent(index));
+    });
+    
+    // Initialize with first item
+    updateContent(0);
+}
+
+/**
  * Initialize event listeners
  */
 function initializeEventListeners() {
@@ -29,6 +96,125 @@ function initializeEventListeners() {
     
     // Add click handlers for step cards on mobile/touch devices
     initializeStepCardInteractions();
+}
+
+/**
+ * Initialize carousel functionality
+ */
+function initializeFeatureCarousel() {
+    const carousel = document.querySelector('.features-carousel');
+    const carouselContainer = document.querySelector('.carousel-container');
+    const cards = document.querySelectorAll('.features-carousel .feature-card');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    
+    if (!carousel || !cards.length) return;
+    
+    let currentIndex = 0;
+    const totalCards = cards.length;
+    const cardsPerView = 3;
+    const gap = 24; // var(--space-lg) = 2rem = 24px
+    let autoPlayInterval;
+    
+    // Function to calculate card width from container
+    function getCardWidth() {
+        const containerWidth = carouselContainer.offsetWidth;
+        return (containerWidth - (gap * (cardsPerView - 1))) / cardsPerView;
+    }
+    
+    // Function to update carousel position
+    function updateCarouselPosition() {
+        const cardWidth = getCardWidth();
+        const offset = currentIndex * (cardWidth + gap);
+        carousel.style.transform = `translateX(-${offset}px)`;
+    }
+    
+    // Function to move to next slide
+    function nextSlide() {
+        currentIndex = Math.min(currentIndex + 1, totalCards - cardsPerView);
+        updateCarouselPosition();
+        resetAutoPlay();
+    }
+    
+    // Function to move to previous slide
+    function prevSlide() {
+        currentIndex = Math.max(currentIndex - 1, 0);
+        updateCarouselPosition();
+        resetAutoPlay();
+    }
+    
+    // Auto-play functionality
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(() => {
+            if (currentIndex < totalCards - cardsPerView) {
+                nextSlide();
+            } else {
+                currentIndex = 0;
+                updateCarouselPosition();
+                resetAutoPlay();
+            }
+        }, 5000);
+    }
+    
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+    
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+    
+    // Event listeners for navigation buttons
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+    });
+    
+    // Pause auto-play on hover
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+    
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoPlay();
+    });
+    
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        resetAutoPlay();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swiped left, show next
+                nextSlide();
+            } else {
+                // Swiped right, show previous
+                prevSlide();
+            }
+        }
+    }
+    
+    // Recalculate on window resize
+    window.addEventListener('resize', updateCarouselPosition);
+    
+    // Initialize
+    updateCarouselPosition();
+    startAutoPlay();
 }
 
 /**
@@ -260,6 +446,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeScrollAnimations();
     initializeParallaxEffect();
     initializeScrollProgress();
+    initializeFeatureCarousel();
+    initializeOSCarousel();
     
     // Log initialization
     console.log('Orion Tool Showcase initialized successfully');

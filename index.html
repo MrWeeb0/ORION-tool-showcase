@@ -57,37 +57,43 @@
     <section id="features" class="features">
         <div class="container">
             <h2>Powerful Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Smart Data Extraction</h3>
-                    <p>Automatically scrape and categorize thousands of engineering career discussions from r/AskEngineers with intelligent filtering.</p>
+            <div class="carousel-wrapper">
+                <button class="carousel-control carousel-prev" aria-label="Previous features">❮</button>
+                <div class="carousel-container">
+                    <div class="features-carousel">
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3>Smart Data Extraction</h3>
+                            <p>Automatically scrape and categorize thousands of engineering career discussions from r/AskEngineers with intelligent filtering.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📑</div>
+                            <h3>Multi-Format Output</h3>
+                            <p>Generate professional PDFs, formatted text documents, and raw JSON data for deeper analysis and insights.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Intelligent Categorization</h3>
+                            <p>Posts automatically organized into 5 thematic chapters covering career transitions, expectations, growth, and workplace dynamics.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💡</div>
+                            <h3>Community Insights</h3>
+                            <p>Extract and highlight top community comments to surface the most valuable perspectives from experienced engineers.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Rate-Limited Scraping</h3>
+                            <p>Respectful API usage with intelligent rate limiting and error handling for reliable, sustainable data collection.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔐</div>
+                            <h3>Ethical & Compliant</h3>
+                            <p>Fully compliant with Reddit's Terms of Service and best practices for web scraping and data handling.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📑</div>
-                    <h3>Multi-Format Output</h3>
-                    <p>Generate professional PDFs, formatted text documents, and raw JSON data for deeper analysis and insights.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Intelligent Categorization</h3>
-                    <p>Posts automatically organized into 5 thematic chapters covering career transitions, expectations, growth, and workplace dynamics.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3>Community Insights</h3>
-                    <p>Extract and highlight top community comments to surface the most valuable perspectives from experienced engineers.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Rate-Limited Scraping</h3>
-                    <p>Respectful API usage with intelligent rate limiting and error handling for reliable, sustainable data collection.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔐</div>
-                    <h3>Ethical & Compliant</h3>
-                    <p>Fully compliant with Reddit's Terms of Service and best practices for web scraping and data handling.</p>
-                </div>
+                <button class="carousel-control carousel-next" aria-label="Next features">❯</button>
             </div>
         </div>
     </section>
@@ -157,22 +163,53 @@
     <section id="benefits" class="benefits">
         <div class="container">
             <h2>Why Choose Orion</h2>
-            <div class="benefits-list">
-                <div class="benefit-item">
-                    <h3>✓ Real-World Insights</h3>
-                    <p>Direct access to authentic career experiences from practicing engineers, not curated content.</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-card-inner">
+                        <div class="benefit-icon-wrapper">
+                            <div class="benefit-icon">🔍</div>
+                            <div class="icon-accent"></div>
+                        </div>
+                        <h3>Real-World Insights</h3>
+                        <p>Direct access to authentic career experiences from practicing engineers, not curated content.</p>
+                        <div class="benefit-highlight">Authentic Data</div>
+                    </div>
                 </div>
-                <div class="benefit-item">
-                    <h3>✓ Time-Saving</h3>
-                    <p>Automatically aggregates months of discussions into structured, digestible formats.</p>
+
+                <div class="benefit-card">
+                    <div class="benefit-card-inner">
+                        <div class="benefit-icon-wrapper">
+                            <div class="benefit-icon">⚡</div>
+                            <div class="icon-accent"></div>
+                        </div>
+                        <h3>Time-Saving</h3>
+                        <p>Automatically aggregates months of discussions into structured, digestible formats.</p>
+                        <div class="benefit-highlight">5x Faster</div>
+                    </div>
                 </div>
-                <div class="benefit-item">
-                    <h3>✓ Student-Focused</h3>
-                    <p>Specifically designed for engineering students making career decisions.</p>
+
+                <div class="benefit-card">
+                    <div class="benefit-card-inner">
+                        <div class="benefit-icon-wrapper">
+                            <div class="benefit-icon">🎓</div>
+                            <div class="icon-accent"></div>
+                        </div>
+                        <h3>Student-Focused</h3>
+                        <p>Specifically designed for engineering students making career decisions.</p>
+                        <div class="benefit-highlight">Purpose Built</div>
+                    </div>
                 </div>
-                <div class="benefit-item">
-                    <h3>✓ Professional Quality</h3>
-                    <p>Industry-standard formatting and presentation in every output.</p>
+
+                <div class="benefit-card">
+                    <div class="benefit-card-inner">
+                        <div class="benefit-icon-wrapper">
+                            <div class="benefit-icon">✨</div>
+                            <div class="icon-accent"></div>
+                        </div>
+                        <h3>Professional Quality</h3>
+                        <p>Industry-standard formatting and presentation in every output.</p>
+                        <div class="benefit-highlight">Premium Output</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -184,81 +221,98 @@
             <h2>Open Source & Community Driven</h2>
             <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">Orion is completely open source. Join our community and help shape the future of engineering career insights.</p>
             
-            <div class="open-source-grid">
-                <!-- GitHub Contribution Card -->
-                <div class="os-card">
-                    <div class="os-card-icon">🔧</div>
-                    <h3>Contribute</h3>
-                    <p>Fork the repository and contribute improvements, bug fixes, or new features to help the community.</p>
-                    <a href="https://github.com/MrWeeb0/ORION-Career-Insight-Reddit" target="_blank" rel="noopener noreferrer" class="os-link">
-                        View Repository
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: inline; margin-left: 4px;">
-                            <polyline points="7 17 17 7"></polyline>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                    </a>
+            <div class="os-carousel-container">
+                <!-- Left side - Title carousel -->
+                <div class="os-titles-section">
+                    <div class="os-titles-list">
+                        <div class="os-title-item active" data-index="0">
+                            <span class="os-title-arrow"></span>
+                            <span class="os-title-text">Contribute</span>
+                        </div>
+                        <div class="os-title-item" data-index="1">
+                            <span class="os-title-arrow"></span>
+                            <span class="os-title-text">Fully Featured</span>
+                        </div>
+                        <div class="os-title-item" data-index="2">
+                            <span class="os-title-arrow"></span>
+                            <span class="os-title-text">Self-Host</span>
+                        </div>
+                        <div class="os-title-item" data-index="3">
+                            <span class="os-title-arrow"></span>
+                            <span class="os-title-text">Community</span>
+                        </div>
+                        <div class="os-title-item" data-index="4">
+                            <span class="os-title-arrow"></span>
+                            <span class="os-title-text">MIT License</span>
+                        </div>
+                        <div class="os-title-item" data-index="5">
+                            <span class="os-title-arrow"></span>
+                            <span class="os-title-text">Documentation</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Features Card -->
-                <div class="os-card">
-                    <div class="os-card-icon">✨</div>
-                    <h3>Fully Featured</h3>
-                    <p>Get the complete feature set: PDF generation, JSON export, intelligent categorization, and more.</p>
-                    <ul class="os-features-list">
-                        <li>✓ Multi-format output</li>
-                        <li>✓ Smart categorization</li>
-                        <li>✓ Rate limiting</li>
-                    </ul>
+                <!-- Right side - Content card -->
+                <div class="os-content-section">
+                    <div class="os-content-card">
+                        <div class="os-content-inner"><div class="corner-tl"></div><div class="corner-br"></div>
+                            <div class="os-content-header">
+                                <span class="os-content-icon">🔧</span>
+                                <h3>Contribute</h3>
+                            </div>
+                            <p class="os-content-description">Fork the repository and contribute improvements, bug fixes, or new features to help the community.</p>
+                            <a href="https://github.com/MrWeeb0/ORION-Career-Insight-Reddit" target="_blank" rel="noopener noreferrer" class="os-content-link">
+                                View Repository →
+                            </a>
+                            <div class="os-content-accent"></div>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Deploy Card -->
-                <div class="os-card">
-                    <div class="os-card-icon">🚀</div>
-                    <h3>Self-Host</h3>
-                    <p>Deploy your own instance anywhere. No restrictions, no dependencies on external services.</p>
-                    <a href="https://github.com/MrWeeb0/ORION-Career-Insight-Reddit" target="_blank" rel="noopener noreferrer" class="os-link">
-                        Get Started
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: inline; margin-left: 4px;">
-                            <polyline points="7 17 17 7"></polyline>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                    </a>
+            <!-- Hidden content data -->
+            <div style="display: none;" id="os-content-data">
+                <div class="os-item" data-index="0">
+                    <div class="os-item-icon">🔧</div>
+                    <div class="os-item-title">Contribute</div>
+                    <div class="os-item-description">Fork the repository and contribute improvements, bug fixes, or new features to help the community.</div>
+                    <div class="os-item-link">View Repository →</div>
+                    <div class="os-item-url">https://github.com/MrWeeb0/ORION-Career-Insight-Reddit</div>
                 </div>
-
-                <!-- Community Card -->
-                <div class="os-card">
-                    <div class="os-card-icon">👥</div>
-                    <h3>Community</h3>
-                    <p>Join developers and engineers building solutions together. Discuss ideas and share feedback.</p>
-                    <a href="https://github.com/MrWeeb0/ORION-Career-Insight-Reddit" target="_blank" rel="noopener noreferrer" class="os-link">
-                        Join us on GitHub
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: inline; margin-left: 4px;">
-                            <polyline points="7 17 17 7"></polyline>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                    </a>
+                <div class="os-item" data-index="1">
+                    <div class="os-item-icon">✨</div>
+                    <div class="os-item-title">Fully Featured</div>
+                    <div class="os-item-description">Get the complete feature set: PDF generation, JSON export, intelligent categorization, and more.</div>
+                    <div class="os-item-features">✓ Multi-format output<br>✓ Smart categorization<br>✓ Rate limiting</div>
+                    <div class="os-item-url">https://github.com/MrWeeb0/ORION-Career-Insight-Reddit</div>
                 </div>
-
-                <!-- License Card -->
-                <div class="os-card">
-                    <div class="os-card-icon">⚖️</div>
-                    <h3>MIT License</h3>
-                    <p>Use Orion freely in commercial and personal projects with minimal restrictions.</p>
-                    <span class="os-badge">Permissive Open Source</span>
+                <div class="os-item" data-index="2">
+                    <div class="os-item-icon">🚀</div>
+                    <div class="os-item-title">Self-Host</div>
+                    <div class="os-item-description">Deploy your own instance anywhere. No restrictions, no dependencies on external services.</div>
+                    <div class="os-item-link">Get Started →</div>
+                    <div class="os-item-url">https://github.com/MrWeeb0/ORION-Career-Insight-Reddit</div>
                 </div>
-
-                <!-- Support Card -->
-                <div class="os-card">
-                    <div class="os-card-icon">💬</div>
-                    <h3>Documentation</h3>
-                    <p>Comprehensive docs, examples, and guides to get you up and running quickly.</p>
-                    <a href="https://github.com/MrWeeb0/ORION-Career-Insight-Reddit" target="_blank" rel="noopener noreferrer" class="os-link">
-                        Read Docs
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: inline; margin-left: 4px;">
-                            <polyline points="7 17 17 7"></polyline>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                    </a>
+                <div class="os-item" data-index="3">
+                    <div class="os-item-icon">👥</div>
+                    <div class="os-item-title">Community</div>
+                    <div class="os-item-description">Join developers and engineers building solutions together. Discuss ideas and share feedback.</div>
+                    <div class="os-item-link">Join us on GitHub →</div>
+                    <div class="os-item-url">https://github.com/MrWeeb0/ORION-Career-Insight-Reddit</div>
+                </div>
+                <div class="os-item" data-index="4">
+                    <div class="os-item-icon">⚖️</div>
+                    <div class="os-item-title">MIT License</div>
+                    <div class="os-item-description">Use Orion freely in commercial and personal projects with minimal restrictions.</div>
+                    <div class="os-item-badge">Permissive Open Source</div>
+                    <div class="os-item-url">https://github.com/MrWeeb0/ORION-Career-Insight-Reddit</div>
+                </div>
+                <div class="os-item" data-index="5">
+                    <div class="os-item-icon">💬</div>
+                    <div class="os-item-title">Documentation</div>
+                    <div class="os-item-description">Comprehensive docs, examples, and guides to get you up and running quickly.</div>
+                    <div class="os-item-link">Read Docs →</div>
+                    <div class="os-item-url">https://github.com/MrWeeb0/ORION-Career-Insight-Reddit</div>
                 </div>
             </div>
 
