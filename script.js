@@ -10,7 +10,13 @@ const CONFIG = {
     FORM_SELECTOR: '#leadForm',
     EMAIL_SELECTOR: '#email',
     SUBMIT_BUTTON_SELECTOR: '#submitButton',
-    MESSAGE_SELECTOR: '#formMessage'
+    MESSAGE_SELECTOR: '#formMessage',
+    // UTM Tracking Configuration
+    UTM_CONFIG: {
+        source: 'orion_showcase',
+        medium: 'website',
+        campaign: 'orion_launch'
+    }
 };
 
 // DOM Elements
@@ -18,6 +24,88 @@ const form = document.querySelector(CONFIG.FORM_SELECTOR);
 const emailInput = document.querySelector(CONFIG.EMAIL_SELECTOR);
 const submitButton = document.querySelector(CONFIG.SUBMIT_BUTTON_SELECTOR);
 const messageElement = document.querySelector(CONFIG.MESSAGE_SELECTOR);
+
+/**
+ * Build UTM tracking URL from base URL and parameters
+ * @param {string} baseUrl - The base URL to add UTM parameters to
+ * @param {object} utm - UTM parameters object
+ * @returns {string} URL with UTM parameters
+ */
+function buildUTMUrl(baseUrl, utm = {}) {
+    const url = new URL(baseUrl);
+    const utmParams = {
+        utm_source: utm.source || CONFIG.UTM_CONFIG.source,
+        utm_medium: utm.medium || CONFIG.UTM_CONFIG.medium,
+        utm_campaign: utm.campaign || CONFIG.UTM_CONFIG.campaign,
+        ...utm // Merge any additional UTM parameters (e.g., utm_content)
+    };
+    
+    // Add UTM parameters to URL
+    Object.entries(utmParams).forEach(([key, value]) => {
+        if (value) {
+            url.searchParams.set(key, value);
+        }
+    });
+    
+    return url.toString();
+}
+
+/**
+ * Initialize UTM tracking on all external links
+ */
+function initializeUTMTracking() {
+    // Get all links on the page
+    const links = document.querySelectorAll('a[href^="http"]');
+    
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        
+        // Determine the context/content for the link
+        let content = 'general_link';
+        
+        if (href.includes('github.com')) {
+            content = 'github_link';
+        } else if (href.includes('reddit.com')) {
+            content = 'reddit_link';
+        } else if (link.closest('#features')) {
+            content = 'features_section';
+        } else if (link.closest('#how-it-works')) {
+            content = 'how_it_works_section';
+        } else if (link.closest('#benefits')) {
+            content = 'benefits_section';
+        } else if (link.closest('.open-source')) {
+            content = 'open_source_section';
+        } else if (link.closest('.cta')) {
+            content = 'cta_section';
+        } else if (link.closest('footer')) {
+            content = 'footer_link';
+        } else if (link.closest('.navbar')) {
+            content = 'navigation_link';
+        }
+        
+        // Build UTM URL
+        const utmUrl = buildUTMUrl(href, { utm_content: content });
+        link.setAttribute('href', utmUrl);
+        
+        // Add data attribute for tracking
+        link.setAttribute('data-utm-tracked', 'true');
+        link.setAttribute('data-utm-content', content);
+    });
+}
+
+/**
+ * Track form submission with GTM event (if Google Analytics is available)
+ */
+function trackFormSubmission(email) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'email_subscription', {
+            'email': email,
+            'source': 'orion_showcase',
+            'form_type': 'newsletter'
+        });
+    }
+}
 
 /**
  * Initialize Open Source carousel
@@ -255,6 +343,9 @@ async function handleFormSubmit(event) {
         return;
     }
     
+    // Track form submission
+    trackFormSubmission(emailInput.value);
+    
     // Disable submit button during request
     submitButton.disabled = true;
     submitButton.textContent = 'Subscribing...';
@@ -441,6 +532,7 @@ function initializeScrollProgress() {
  * Initialize all functionality when DOM is ready
  */
 document.addEventListener('DOMContentLoaded', () => {
+    initializeUTMTracking();
     initializeEventListeners();
     initializeSmoothScroll();
     initializeScrollAnimations();
@@ -451,6 +543,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Log initialization
     console.log('Orion Tool Showcase initialized successfully');
+    console.log('UTM tracking enabled for external links');
 });
 
 // Export for testing
